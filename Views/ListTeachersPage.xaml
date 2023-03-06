@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EC2202MAC.Views.ListTeachersPage"
+             xmlns:vm="clr-namespace:EC2202MAC.ViewModel"
+             xmlns:mo="clr-namespace:EC2202MAC.Models"
+             xmlns:te="clr-namespace:EC2202MAC.Views.Templates"
+             Title="ListTeachersPage">
+    
+    <VerticalStackLayout x:DataType="vm:TeacherViewModel">
+        <Button Text="Muéstrame Maestros" Command="{Binding ListTeachersCommand}"/>
+        <CollectionView ItemsSource="{Binding Teachers}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <te:ItemsTeachersPage/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
